@@ -906,6 +906,10 @@ body {
   overflow: hidden;
 }
 
+.portfolio-title span {
+  display: none;
+}
+
 .portfolio-info {
   width: 90%;
   height: 100%;
@@ -938,6 +942,8 @@ body {
   display: flex;
   justify-content: center;
   opacity: 1;
+  margin-left: 2px;
+  margin-top: 10px;
 }
 
 .filter-toggle-btn {
@@ -1129,7 +1135,6 @@ body {
 }
 
 .gallery-item {
-  
   height: 400px;
   position: relative;
   overflow: hidden;
@@ -1178,6 +1183,8 @@ body {
 }
 
 /* Lightbox Styles */
+
+
 .lightbox, .lightbox1 {
   position: fixed;
   top: 0;
@@ -1238,12 +1245,17 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   gap: 10px;
+}
+
+.info-buttons {
+  order: 1;
 }
 
 .image-info h3 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: #e63946;
 }
 
@@ -1306,8 +1318,8 @@ body {
 }
 
 
-
 .photographer-btn, .designer-btn {
+  margin-top: 5px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1332,20 +1344,17 @@ body {
   border: solid 1px #2c44ff;
 }
 
-
-
 .photographer-btn i {
   font-size: 1rem;
 }
 
 .photographer-details {
-  margin-top: 5px;
   border-top: 1px solid rgba(110, 110, 110, 0.1);
 }
 
-.photographer-location {
+.photographer-location, .image-date {
   opacity: 1;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1353,6 +1362,11 @@ body {
 
 .photographer-location::before {
   content: "📍";
+  font-size: 0.8rem;
+}
+
+.image-date::before {
+  content: "🗓️";
   font-size: 0.8rem;
 }
 
@@ -1884,12 +1898,17 @@ body {
   }
 
   .gallery-grid {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: flex-start;
   }
 
   .gallery-item {
     height: auto;
+    width: 45;
+  }
+
+  .gallery-item.landscape {
     width: 100%;
   }
 
@@ -1902,10 +1921,12 @@ body {
     transform: none;
     width: 100%;
     height: auto;
+    max-height: 50vh;
     object-fit: contain;
     display: block;
     margin: 0 auto;
   }
+
   
   /* Portfolio socials */
   .portfolio-info .socials-container {
@@ -1962,7 +1983,8 @@ body {
   }
   
   .image-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
   }
   
   .image-info p {
@@ -2083,7 +2105,6 @@ body {
     background: rgba(0, 0, 0, 0.462);
     padding: 5px;
     padding-right: 10px;
-    border-radius: 20px;
     backdrop-filter: blur(10px);
   }
   
@@ -2222,6 +2243,7 @@ body {
     transform: none !important;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     order: 1;
     margin-bottom: 30px;
@@ -2235,13 +2257,14 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-    left: 0;
     margin: 0 !important;
+    display: flex;
+    justify-content: center;
   }
   
   .digital-card .digital {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     max-height: 70vh;
     object-fit: cover;
     border-radius: 3px;
@@ -2249,6 +2272,15 @@ body {
   
   .extra-space {
     display: none;
+  }
+
+  .stats-container {
+    width: 70%;
+    margin: auto;
+  }
+
+  .stats-container .stat-row {
+    padding-left: 10%;
   }
   
   /* Portfolio section adjustments */
@@ -2259,6 +2291,7 @@ body {
     padding: 70px 20px 20px 20px;
     background: #000;
   }
+
   
   
   
@@ -2322,13 +2355,16 @@ body {
     transform: none;
     width: 100%;
     height: auto;
-    max-height: 80vh;
+    max-height: 70vh;
     object-fit: contain;
     display: block;
     margin: 0 auto;
     border-radius: 2px;
   }
   
+  .time-place {
+    font-size: 0.7rem;
+  }
   /* Footer adjustments */
   .footer {
     width: 100%;
@@ -2377,6 +2413,14 @@ body {
     animation: fadeInUp 0.8s ease forwards;
     animation-timeline: view();
     animation-range: entry 15% entry 45%;
+  }
+
+  p.third a {
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    margin-left: 5px;
+    padding: 4px 8px;
   }
   
   .digitals-container .digital-card:nth-child(1) {
@@ -2438,7 +2482,7 @@ body {
   
   .lightbox-image {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 80%;
   }
   
   .lightbox-nav {

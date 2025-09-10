@@ -1,5 +1,54 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    function addSwipeFunctionality() {
+  const lightboxes = [document.querySelector('.lightbox'), document.querySelector('.lightbox1')];
+  
+  lightboxes.forEach(lightbox => {
+    if (!lightbox) return;
+    
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50; // Minimum distance for a swipe to be registered
+    
+    lightbox.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    lightbox.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      
+      if (Math.abs(swipeDistance) < minSwipeDistance) return;
+      
+      if (swipeDistance > 0) {
+        // Swipe right - previous image
+        if (lightbox.classList.contains('active')) {
+          if (lightbox.classList.contains('lightbox')) {
+            showPrevImage();
+          } else {
+            showPrevDigital();
+          }
+        }
+      } else {
+        // Swipe left - next image
+        if (lightbox.classList.contains('active')) {
+          if (lightbox.classList.contains('lightbox')) {
+            showNextImage();
+          } else {
+            showNextDigital();
+          }
+        }
+      }
+    }
+  });
+} 
+
+  addSwipeFunctionality();
+
     const btn = document.querySelector('.lets-work');
   
     if (btn) {
