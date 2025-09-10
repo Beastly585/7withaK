@@ -15,6 +15,7 @@
       --focus-color: #f9f9f9;
       --shadow-color: rgba(0,0,0,0.08);
       --error-color: #e74c3c;
+      --dark-color: black;
     }
 
     * {
@@ -25,7 +26,7 @@
 
     body {
       font-family: "Overpass", sans-serif;
-      background: var(--background-color);
+      background: var(--dark-color);
       color: var(--text-color);
       margin: 0;
       padding: 0;
@@ -34,6 +35,12 @@
       align-items: center;
       min-height: 100vh;
       line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .form-wrapper {
+        margin: 20px 10px;
+      }
     }
 
     .form-wrapper {
@@ -362,12 +369,12 @@
 <body>
 
   <div class="form-wrapper" id="formWrapper">
-    <div class="form-title">Let's Touch Base</div>
+    <div class="form-title">Let's Chat</div>
     <p class="form-intro">
-      Please fill out the form below and I'll reach back out to you ASAP. 
+      Fill out your info below and I'll get in touch asap. 
     </p>
     <p class="form-intro" style="margin-bottom: 25px"> 
-      The more info, the better; but please don't feel discouraged to just reach out with a loose concept or idea.
+      For projects, the more info, the better! 
     </p>
 
     <!-- UPDATED FORM WITH CORRECT WEB3FORMS SETUP -->
