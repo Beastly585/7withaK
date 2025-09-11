@@ -2132,7 +2132,7 @@ body {
     margin-bottom: 0;
     gap: 10px;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.462);
+    background: rgba(0, 0, 0, 0.662);
     padding: 5px;
     padding-right: 10px;
     backdrop-filter: blur(10px);
@@ -2546,4 +2546,53 @@ body {
 
 .mobile-hidden {
   display: none !important;
+}
+
+@media screen and (min-width: 1025px) and (max-height: 789px) {
+  /* Adjust layout for shorter screens to prevent button overlap */
+  .main-final {
+    padding-bottom: 100px;
+    overflow-y:scroll;
+    min-height: max-content; /* Add padding to make room for the button */
+  }
+
+  .projects-page {
+    position: relative;
+    height: 110vh;
+  }
+
+  .lets-work {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .lets-work-btn {
+    font-size: 1.2rem;
+  }
+  
+  .digitals-block {
+    margin-top: 2vh; /* Reduce top margin */
+  }
+  
+  .digitals-container {
+    height: 40vh; /* Reduce height of digitals container */
+  }
+  
+  .lets-work {
+    bottom: 0px; /* Raise button slightly */
+  }
+  
+  .stats-container {
+    margin-bottom: 10px; /* Add space below stats */
+  }
+  
+  /* Optional: Make text slightly smaller to fit better */
+  .do-it-anyway {
+    font-size: 3rem;
+  }
+  
+  .header-bio p {
+    font-size: 16px;
+  }
 }
