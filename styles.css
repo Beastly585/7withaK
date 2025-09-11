@@ -1596,11 +1596,6 @@ body {
 
   
 
-  .autoshow {
-    animation: autoShowAnimation both;
-    animation-timeline: view();
-    animation-range: entry 80% cover 20%;
-  }
 
    
 
@@ -1924,14 +1919,18 @@ body {
     width: 45;
   }
 
+  .gallery-item.autoshow {
+    transition: none;
+  }
+
   .gallery-item.landscape {
     width: 100%;
   }
-
+/* 
   .gallery-item:hover, .gallery-item:hover img {
     transform: none;
     box-shadow: none;
-  }
+  } */
 
   .gallery-item img {
     transform: none;
@@ -2006,6 +2005,21 @@ body {
   .image-info p {
     font-size: 0.9rem;
   }
+
+
+  .gallery-item.autoshow {
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+    transition: transform 0.5s ease-out, opacity 0.8s ease-out;
+    /* animation: autoShowAnimation 0.8s both;
+    animation-timeline: view();
+    animation-range: entry 80% cover 20%; */
+  }
+
+  .autoshow.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
   
   /* Specific adjustments for smaller phones */
   /* @media (max-width: 480px) {

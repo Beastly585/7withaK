@@ -1,5 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+
+  const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    } else {
+      entry.target.classList.remove('in-view'); // reset when leaving viewport
+    }
+  });
+}, { threshold: 0.1 }); // 20% visible triggers animation
+
+document.querySelectorAll('.autoshow').forEach(el => observer.observe(el));
+
+
     function addSwipeFunctionality() {
   const lightboxes = [document.querySelector('.lightbox'), document.querySelector('.lightbox1')];
   
