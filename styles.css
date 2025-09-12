@@ -1612,7 +1612,7 @@ body {
   }
 
   .gallery-item:hover, .gallery-item:hover img {
-    transform: none;
+    transform: none !important;
     box-shadow: none;
   }
 
@@ -2506,12 +2506,25 @@ body {
   }
   
   .lightbox-nav {
+    height: 100%;
+    opacity: 0.2;
     font-size: 2rem;
     padding: 10px;
     position: fixed;
     top: 50%;
   }
-  
+
+  .lightbox-nav.prev-nav, .lightbox-nav.next-nav {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .lightbox-counter {
+    bottom: 60px;
+  }
+
   .lightbox-close {
     top: 10px;
     right: 15px;
