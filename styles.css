@@ -2490,6 +2490,7 @@ body {
   
   /* Lightbox mobile adjustments */
   .lightbox-content {
+    position: relative;
     width: 95%;
     height: 90%;
     flex-direction: column;
@@ -2511,18 +2512,19 @@ body {
     font-size: 2rem;
     padding: 10px;
     position: fixed;
-    top: 50%;
+    top: 0px;
   }
 
   .lightbox-nav.prev-nav, .lightbox-nav.next-nav {
     height: 100%;
-    position: absolute;
     display: flex;
     align-items: flex-end;
+    bottom: 0;
+    transform: translateY(0px);
   }
 
   .lightbox-counter {
-    bottom: 60px;
+    bottom: 20px;
   }
 
   .lightbox-close {
