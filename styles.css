@@ -1611,6 +1611,11 @@ body {
     box-shadow: none;
   }
 
+  .gallery-item:hover, .gallery-item:hover img {
+    transform: none;
+    box-shadow: none;
+  }
+
  
   /* Reset body and container styles for mobile */
   body {
